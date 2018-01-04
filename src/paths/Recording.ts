@@ -1,4 +1,5 @@
 // This is Generated Source.
+import GetCallRecordingResponse from "../definitions/GetCallRecordingResponse";
 import PathSegment from "../PathSegment";
 import Content from "./Content";
 
@@ -15,9 +16,9 @@ export default class Recording extends PathSegment {
     }
 
     /**
-     *  Get Call Recording Metadata
+     *  <p style='font-style:italic;'>Since 1.0.18 (Release 6.5)</p><p>Returns call recording metadata.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallRecording</td><td>Downloading call recording content</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>
      */
-    get(): Promise<GetResponse> {
+    get(): Promise<GetCallRecordingResponse> {
         return this._send({
             body: undefined,
             ignoreId: true,
@@ -29,7 +30,7 @@ export default class Recording extends PathSegment {
     }
 
     /**
-     *  Get Call Recording Metadata
+     *  <p style='font-style:italic;'>Since 1.0.18 (Release 6.5)</p><p>Returns call recording metadata.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadCallRecording</td><td>Downloading call recording content</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Heavy</p>
      *  return {ApiResponse}
      */
     getRaw(): Promise<any> {
@@ -40,27 +41,4 @@ export default class Recording extends PathSegment {
             query: undefined,
         });
     }
-}
-
-export interface GetResponse {
-
-    /**
-     * Internal identifier of the call recording
-     */
-    id?: string;
-
-    /**
-     * Link to the call recording binary content
-     */
-    contentUri?: string;
-
-    /**
-     * Call recording file format. Supported format is audio/x-wav
-     */
-    contentType?: string;
-
-    /**
-     * Recorded call duration
-     */
-    duration?: number;
 }

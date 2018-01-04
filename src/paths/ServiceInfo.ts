@@ -1,5 +1,5 @@
 // This is Generated Source.
-import MeetingServiceInfo from "../definitions/MeetingServiceInfo";
+import MeetingServiceInfoResource from "../definitions/MeetingServiceInfoResource";
 import PathSegment from "../PathSegment";
 
 export default class ServiceInfo extends PathSegment {
@@ -8,9 +8,9 @@ export default class ServiceInfo extends PathSegment {
     }
 
     /**
-     *  Get Meeting Service Info
+     *  
      */
-    get(): Promise<MeetingServiceInfo> {
+    get(): Promise<MeetingServiceInfoResource> {
         return this._send({
             body: undefined,
             ignoreId: true,
@@ -22,7 +22,7 @@ export default class ServiceInfo extends PathSegment {
     }
 
     /**
-     *  Get Meeting Service Info
+     *  
      *  return {ApiResponse}
      */
     getRaw(): Promise<any> {

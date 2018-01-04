@@ -1,6 +1,5 @@
 // This is Generated Source.
-import MessageInfo from "../definitions/MessageInfo";
-import PagingResult from "../PagingResult";
+import GetMessageSyncResponse from "../definitions/GetMessageSyncResponse";
 import PathSegment from "../PathSegment";
 
 export default class MessageSync extends PathSegment {
@@ -9,9 +8,9 @@ export default class MessageSync extends PathSegment {
     }
 
     /**
-     *  Message Synchronization
+     *  <p style='font-style:italic;'>Since 1.0.4 (Release 5.13)</p><p>Provides facilities to synchronize mailbox content stored externally with server state.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      */
-    list(query?: ListQuery): Promise<PagingResult<MessageInfo>> {
+    list(query?: ListQuery): Promise<GetMessageSyncResponse> {
         return this._send({
             body: undefined,
             ignoreId: false,
@@ -23,7 +22,7 @@ export default class MessageSync extends PathSegment {
     }
 
     /**
-     *  Message Synchronization
+     *  <p style='font-style:italic;'>Since 1.0.4 (Release 5.13)</p><p>Provides facilities to synchronize mailbox content stored externally with server state.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadMessages</td><td>Viewing user messages</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      *  return {ApiResponse}
      */
     listRaw(query?: ListQuery): Promise<any> {
@@ -56,7 +55,7 @@ export interface ListQuery {
     /**
      * Direction for the resulting messages. If not specified, both inbound and outbound messages are returned. Multiple values are accepted
      */
-    direction?: "Inbound" | "Outbound";
+    direction?: ('Inbound' | 'Outbound')[];
 
     /**
      * If 'True', then the latest messages per every conversation ID are returned
@@ -66,7 +65,7 @@ export interface ListQuery {
     /**
      * Type for the resulting messages. If not specified, all types of messages are returned. Multiple values are accepted
      */
-    messageType?: "Fax" | "SMS" | "VoiceMail" | "Pager" | "Text";
+    messageType?: ('Fax' | 'SMS' | 'VoiceMail' | 'Pager' | 'Text')[];
 
     /**
      * Limits the number of records to be returned (works in combination with dateFrom and dateTo if specified)
@@ -81,5 +80,5 @@ export interface ListQuery {
     /**
      * Type of message synchronization
      */
-    syncType?: "FSync" | "ISync";
+    syncType?: ('FSync' | 'ISync')[];
 }

@@ -1,5 +1,5 @@
 // This is Generated Source.
-import PermissionDetailsInfo from "../definitions/PermissionDetailsInfo";
+import AuthProfileCheckResource from "../definitions/AuthProfileCheckResource";
 import PathSegment from "../PathSegment";
 
 export default class Check extends PathSegment {
@@ -8,9 +8,9 @@ export default class Check extends PathSegment {
     }
 
     /**
-     *  Check User Permissions
+     *  
      */
-    get(query?: GetQuery): Promise<GetResponse> {
+    get(query?: GetQuery): Promise<AuthProfileCheckResource> {
         return this._send({
             body: undefined,
             ignoreId: true,
@@ -22,7 +22,7 @@ export default class Check extends PathSegment {
     }
 
     /**
-     *  Check User Permissions
+     *  
      *  return {ApiResponse}
      */
     getRaw(query?: GetQuery): Promise<any> {
@@ -38,35 +38,12 @@ export default class Check extends PathSegment {
 export interface GetQuery {
 
     /**
-     * Permission to check
+     * 
      */
     permissionId?: string;
 
     /**
-     * Optional. Internal identifier of an extension for which user permissions are to be checked. The default value is the currently logged-in extension
+     * 
      */
     targetExtensionId?: string;
-}
-
-export interface GetResponse {
-
-    /**
-     * Canonical URI of a permission resource
-     */
-    uri?: string;
-
-    /**
-     * Specifies if check result is successful or not
-     */
-    successful?: boolean;
-
-    /**
-     * Information on a permission checked. Returned if successful is 'True'
-     */
-    details?: PermissionDetailsInfo;
-
-    /**
-     * List of active scopes for permission. Returned if successful is 'True'
-     */
-    scopes?: string[];
 }

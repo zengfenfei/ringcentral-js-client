@@ -7,7 +7,7 @@ export default class End extends PathSegment {
     }
 
     /**
-     *  End Current Meeting
+     *  
      */
     post(): Promise<void> {
         return this._send({
@@ -19,7 +19,7 @@ export default class End extends PathSegment {
     }
 
     /**
-     *  End Current Meeting
+     *  
      *  return {ApiResponse}
      */
     postRaw(): Promise<any> {

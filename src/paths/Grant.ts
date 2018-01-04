@@ -1,6 +1,5 @@
 // This is Generated Source.
-import GrantInfo from "../definitions/GrantInfo";
-import PagingResult from "../PagingResult";
+import GetExtensionGrantListResponse from "../definitions/GetExtensionGrantListResponse";
 import PathSegment from "../PathSegment";
 
 export default class Grant extends PathSegment {
@@ -9,9 +8,9 @@ export default class Grant extends PathSegment {
     }
 
     /**
-     *  Get Extension Grants
+     *  <p style='font-style:italic;'></p><p>Returns the list of extension grants.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      */
-    list(query?: ListQuery): Promise<PagingResult<GrantInfo>> {
+    list(query?: ListQuery): Promise<GetExtensionGrantListResponse> {
         return this._send({
             body: undefined,
             ignoreId: false,
@@ -23,7 +22,7 @@ export default class Grant extends PathSegment {
     }
 
     /**
-     *  Get Extension Grants
+     *  <p style='font-style:italic;'></p><p>Returns the list of extension grants.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      *  return {ApiResponse}
      */
     listRaw(query?: ListQuery): Promise<any> {

@@ -1,4 +1,5 @@
 // Generated Source
+import GlipAttachmentInfo from "./GlipAttachmentInfo";
 
 interface GlipPostInfo {
 
@@ -15,12 +16,17 @@ interface GlipPostInfo {
     /**
      * Type of a post
      */
-    type?: "TextMessage" | "PersonJoined" | "PersonsAdded";
+    type?: 'TextMessage' | 'PersonJoined' | 'PersonsAdded';
 
     /**
      * For 'TextMessage' post type only. Message text
      */
     text?: string;
+
+    /**
+     * List of posted attachments
+     */
+    attachments?: GlipAttachmentInfo[];
 
     /**
      * Internal identifier of a user - author of a post

@@ -1,6 +1,8 @@
 // This is Generated Source.
-import DeviceInfo from "../definitions/DeviceInfo";
-import PagingResult from "../PagingResult";
+import AccountDeviceUpdate from "../definitions/AccountDeviceUpdate";
+import DeviceResource from "../definitions/DeviceResource";
+import GetAccountDevicesResponse from "../definitions/GetAccountDevicesResponse";
+import GetDeviceInfoResponse from "../definitions/GetDeviceInfoResponse";
 import PathSegment from "../PathSegment";
 
 export default class Device extends PathSegment {
@@ -9,9 +11,9 @@ export default class Device extends PathSegment {
     }
 
     /**
-     *  Get Account Device List
+     *  <p style='font-style:italic;'>Since 1.0.12 (Release 6.4)</p><p>Returns all the devices for a particular extension.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      */
-    list(): Promise<PagingResult<DeviceInfo>> {
+    list(): Promise<GetAccountDevicesResponse> {
         return this._send({
             body: undefined,
             ignoreId: false,
@@ -23,7 +25,7 @@ export default class Device extends PathSegment {
     }
 
     /**
-     *  Get Account Device List
+     *  <p style='font-style:italic;'>Since 1.0.12 (Release 6.4)</p><p>Returns all the devices for a particular extension.</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      *  return {ApiResponse}
      */
     listRaw(): Promise<any> {
@@ -36,9 +38,9 @@ export default class Device extends PathSegment {
     }
 
     /**
-     *  Get Device by ID
+     *  <p style='font-style:italic;'>Since 1.0.9 (Release 6.1)</p><p>Returns account device(s) by their ID(s).</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      */
-    get(): Promise<DeviceInfo> {
+    get(): Promise<GetDeviceInfoResponse> {
         return this._send({
             body: undefined,
             ignoreId: true,
@@ -50,7 +52,7 @@ export default class Device extends PathSegment {
     }
 
     /**
-     *  Get Device by ID
+     *  <p style='font-style:italic;'>Since 1.0.9 (Release 6.1)</p><p>Returns account device(s) by their ID(s).</p><h4>Required Permissions</h4><table class='fullwidth'><thead><tr><th>Permission</th><th>Description</th></tr></thead><tbody><tr><td class='code'>ReadAccounts</td><td>Viewing user account info (including name, business name, address and phone number/account number)</td></tr></tbody></table><h4>Usage Plan Group</h4><p>Light</p>
      *  return {ApiResponse}
      */
     getRaw(): Promise<any> {
@@ -58,6 +60,33 @@ export default class Device extends PathSegment {
             body: undefined,
             ignoreId: true,
             method: "get",
+            query: undefined,
+        });
+    }
+
+    /**
+     *  
+     */
+    put(body: AccountDeviceUpdate): Promise<DeviceResource> {
+        return this._send({
+            body: body,
+            ignoreId: true,
+            method: "put",
+            query: undefined,
+        }).then((res) => {
+                return res.json();
+        });
+    }
+
+    /**
+     *  
+     *  return {ApiResponse}
+     */
+    putRaw(body: AccountDeviceUpdate): Promise<any> {
+        return this._send({
+            body: body,
+            ignoreId: true,
+            method: "put",
             query: undefined,
         });
     }

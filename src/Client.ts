@@ -5,7 +5,6 @@ import ClientInfo from "./paths/ClientInfo";
 import Dictionary from "./paths/Dictionary";
 import Glip from "./paths/Glip";
 import NumberParser from "./paths/NumberParser";
-import NumberPool from "./paths/NumberPool";
 import Subscription from "./paths/Subscription";
 
 export default class Client {
@@ -30,10 +29,6 @@ export default class Client {
 
     numberParser(id?: string): NumberParser {
         return new NumberParser(null, id, this.service.platform());
-    }
-
-    numberPool(id?: string): NumberPool {
-        return new NumberPool(null, id, this.service.platform());
     }
 
     subscription(id?: string): Subscription {
