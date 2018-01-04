@@ -392,6 +392,7 @@ describe("Glip", () => {
 
     it("Get current company", () => {
         return client.glip().companies("~").get().then((c) => {
+            console.log('>>', c)
             expect(c).to.has.keys("id", "name", "domain", "creationTime", "lastModifiedTime");
         });
     });

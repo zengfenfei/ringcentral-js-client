@@ -18,7 +18,7 @@ export default class CallLog extends PathSegment {
             method: "get",
             query: query,
         }).then((res) => {
-                return res.json();
+            return res.json();
         });
     }
 
@@ -61,7 +61,7 @@ export default class CallLog extends PathSegment {
     }
 
     /**
-     *  
+     *
      */
     get(query?: GetQuery): Promise<UserCallLogRecord> {
         return this._send({
@@ -70,12 +70,12 @@ export default class CallLog extends PathSegment {
             method: "get",
             query: query,
         }).then((res) => {
-                return res.json();
+            return res.json();
         });
     }
 
     /**
-     *  
+     *
      *  return {ApiResponse}
      */
     getRaw(query?: GetQuery): Promise<any> {
@@ -108,27 +108,27 @@ export interface ListQuery {
     /**
      * The direction for the result records. It is allowed to specify more than one direction. If not specified, both inbound and outbound records are returned. Multiple values are accepted
      */
-    direction?: ('Inbound' | 'Outbound')[];
+    direction?: ("Inbound" | "Outbound")[];
 
     /**
-     * 
+     *
      */
     sessionId?: string;
 
     /**
      * Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted
      */
-    type?: ('Voice' | 'Fax')[];
+    type?: ("Voice" | "Fax")[];
 
     /**
      * Call transport type. 'PSTN' specifies that a call leg is initiated from the PSTN network provider; 'VoIP' - from an RC phone. By default this filter is disabled
      */
-    transport?: ('PSTN' | 'VoIP')[];
+    transport?: ("PSTN" | "VoIP")[];
 
     /**
      * The default value is 'Simple' for both account and extension call log
      */
-    view?: ('Simple' | 'Detailed')[];
+    view?: ("Simple" | "Detailed")[];
 
     /**
      * 'True' if only recorded calls have to be returned
@@ -164,27 +164,27 @@ export interface DeleteQuery {
     dateTo?: string;
 
     /**
-     * 
+     *
      */
     phoneNumber?: string;
 
     /**
-     * 
+     *
      */
     extensionNumber?: string;
 
     /**
-     * 
+     *
      */
-    type?: ('Voice' | 'Fax')[];
+    type?: ("Voice" | "Fax")[];
 
     /**
-     * 
+     *
      */
-    direction?: ('Inbound' | 'Outbound')[];
+    direction?: ("Inbound" | "Outbound")[];
 
     /**
-     * 
+     *
      */
     dateFrom?: string;
 }
@@ -192,7 +192,7 @@ export interface DeleteQuery {
 export interface GetQuery {
 
     /**
-     * 
+     *
      */
-    view?: 'Simple' | 'Detailed';
+    view?: "Simple" | "Detailed";
 }

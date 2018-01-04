@@ -40,7 +40,7 @@ export interface ListQuery {
     /**
      * Type of synchronization. 'FSync' is a default value
      */
-    syncType?: ('FSync' | 'ISync')[];
+    syncType?: ("FSync" | "ISync")[];
 
     /**
      * Value of syncToken property of last sync request response
@@ -60,5 +60,5 @@ export interface ListQuery {
     /**
      * Type of calls to be returned. The default value is 'All'
      */
-    statusGroup?: ('Missed' | 'All')[];
+    statusGroup?: ("Missed" | "All")[];
 }

@@ -11,7 +11,7 @@ interface ActiveCallInfo {
     /**
      * 
      */
-    direction?: 'Inbound' | 'Outbound';
+    direction?: "Inbound" | "Outbound";
 
     /**
      * 

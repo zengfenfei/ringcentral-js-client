@@ -10,7 +10,7 @@ interface CompanyDirectoryPhoneNumberInfo {
     /**
      * Type of a phone number
      */
-    type?: 'VoiceFax' | 'FaxOnly' | 'VoiceOnly';
+    type?: "VoiceFax" | "FaxOnly" | "VoiceOnly";
 }
 
 export default CompanyDirectoryPhoneNumberInfo;

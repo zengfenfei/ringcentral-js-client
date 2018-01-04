@@ -122,7 +122,7 @@ export interface GetQuery {
     /**
      * User name or email
      */
-    filter?: ('userName' | 'email')[];
+    filter?: ("userName" | "email")[];
 
     /**
      * Page
